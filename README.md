@@ -1,3 +1,2 @@
-# rowlang
-rowlang is a programming language I invented based on an analogy to rowing.
-
+# RowLang
+I invented RowLang, a minimalistic esoteric programming language based on an analogy to rowing.
