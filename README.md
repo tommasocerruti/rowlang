@@ -3,7 +3,7 @@ I invented RowLang, a minimalistic esoteric programming language based on an ana
 
 ## Technical Description of RowLang
 
-RowLang is a domain-specific esoteric programming language designed for symbolic computation, inspired by the movements and dynamics of rowing. 
+RowLang is a domain-specific esoteric programming language designed for symbolic computation, inspired by the dynamics of rowing. 
 It offers a minimalistic yet expressive syntax, combining memory manipulation with the metaphorical representation of rowing actions. 
 RowLang programs are composed of commands, loops, and formations, providing a unique perspective on algorithmic expression.
 
@@ -13,7 +13,7 @@ RowLang programs are composed of commands, loops, and formations, providing a un
   - `P`: Pull - Move the memory pointer to the right.
   - `R`: Recover - Move the memory pointer to the left.
   - `S`: Stroke - Increment the byte at the current memory cell.
-  - `B`: Back - Decrement the byte at the current memory cell.
+  - `B`: Bow - Decrement the byte at the current memory cell.
   - `.`: Catch - Output the byte at the current memory cell as a character.
   - `,`: Release - Input a character and store its ASCII value in the current memory cell.
 - **Loops:** RowLang supports loop constructs enclosed within `[...]`, facilitating repetitive execution of commands until the value of the current memory cell becomes zero.
