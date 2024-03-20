@@ -1,0 +1,4 @@
+tommasocerruti@MBPDT rowlang % gcc -o rowlang_compiler rowlang_compiler.c
+tommasocerruti@MBPDT rowlang % ./rowlang_compiler input_files/fibonacci.rl > output_files/fibonacci.c
+tommasocerruti@MBPDT rowlang % gcc -o output_fibonacci output_files/fibonacci.c
+tommasocerruti@MBPDT rowlang % ./output_fibonacci
