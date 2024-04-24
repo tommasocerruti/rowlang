@@ -47,7 +47,3 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
 - **Education and Exploration:** Educational tool for introducing programming concepts in a playful and engaging manner using a metaphorical approach to visualize algorithms as sequences of rowing actions.
 - **Artistic Expression:** As an esoteric programming language, it appeals to enthusiasts interested in creative coding and algorithmic art. 
 - **Algorithmic Challenges:** Its simplicity and metaphorical abstraction provide a platform for exploring computational concepts in unconventional ways.
-
-## Conclusion
-
-RowLang embodies the intersection of programming and metaphorical expression, offering a unique lens through which to view computational concepts. Its minimalist syntax and rowing-inspired semantics provide a canvas for creativity, exploration, and technical experimentation. Whether used for educational purposes, artistic endeavors, or algorithmic challenges, RowLang invites programmers to navigate the waters of symbolic computation with curiosity and imagination.
