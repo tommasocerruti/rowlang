@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #define TAPE_SIZE 30000
+int stroke_delay = 0;
+int loopDepth = 0;
 
 typedef enum {
     PULL,
@@ -12,7 +15,11 @@ typedef enum {
     RELEASE,
     LOOP_START,
     LOOP_END,
-    END_OF_FILE
+    STROKE_RATE_INC,
+    STROKE_RATE_DEC,
+    END_OF_FILE,
+    NEW_LINE,
+    ERROR
 } TokenType;
 
 typedef struct {
@@ -24,46 +31,54 @@ Token nextToken(FILE *);
 
 void emitCode(Token);
 
+void formatter(void);
+
 int main(int argc, char *argv[]) {
     if (argc != 2) {
         printf("Usage: %s <input_file>", argv[0]);
         return 1;
     }
     FILE *source = fopen(argv[1], "r");
-    if (!source) {
+    if (source == NULL) {
         printf("Error: Unable to open input file.\n");
         return 1;
     }
-    printf("#include <stdio.h>\n\nint main() {\n");
-    printf("unsigned char tape[%d] = {0};\nunsigned char *memory = tape;\n", TAPE_SIZE);
+    printf("#include <stdio.h>\n#include <unistd.h>\n\nint main() {\n");
+    printf("\tunsigned char tape[%d] = {0};\n\tunsigned char *memory = tape;\n\n", TAPE_SIZE);
 
-    int loopDepth = 0;
     Token token;
     while ((token = nextToken(source)).type != END_OF_FILE) {
         if (token.type == LOOP_START) {
-            printf("int loop%d = 0;\n", loopDepth);
-            printf("while (*memory) {\n");
+            printf("\twhile (*memory) {\n");
             loopDepth++;
         } else if (token.type == LOOP_END) {
-            printf("}\n");
+            printf("\t}\n");
             loopDepth--;
         } else {
             emitCode(token);
         }
     }
     if (loopDepth != 0) {
-        printf("Error: Unmatched loop brackets.\n");
-        return 1;
+        printf("//Error: Unmatched loop brackets.\n");
+        printf("\nreturn 1;\n}");
+        fclose(source);
     }
-    printf("\nreturn 0;\n}");
-    fclose(source);
+    else if (token.type == ERROR){
+        printf("//Error: Unrecognised command.\n");
+        printf("\nreturn 1;\n}");
+        fclose(source);
+    }
+    else{
+        printf("\n\treturn 0;\n}");
+        fclose(source);
+    }
     return 0;
 }
 
-Token nextToken(FILE *source) {
+Token nextToken(FILE *file) {
     Token token;
-    char c = fgetc(source);
-    switch (c) {
+    char ch = fgetc(file), rep;
+    switch (ch) {
         case 'P':
             token.type = PULL;
             break;
@@ -88,18 +103,29 @@ Token nextToken(FILE *source) {
         case ']':
             token.type = LOOP_END;
             break;
+        case '^':
+            token.type = STROKE_RATE_INC;
+            break;
+        case 'v':
+            token.type = STROKE_RATE_DEC;
+            break;
         case EOF:
             token.type = END_OF_FILE;
             break;
+        case '\n':
+            token.type = NEW_LINE;
+            break;
         default:
-            return nextToken(source);
+            token.type = ERROR;
     }
-    if ((c = fgetc(source)) >= '0' && c <= '9') {
-        ungetc(c, source);
-        fscanf(source, "%d", &token.value);
-    } else {
-        ungetc(c, source);
+    if (token.type != (END_OF_FILE || ERROR)){
         token.value = 1;
+        rep=fgetc(file);
+        if (isdigit(rep)) {
+            ungetc(rep, file);
+            fscanf(file, "%d", &token.value);
+        }
+        ungetc(rep, file);
     }
     return token;
 }
@@ -107,30 +133,61 @@ Token nextToken(FILE *source) {
 void emitCode(Token token) {
     switch (token.type) {
         case PULL:
-            printf("memory += %d;", token.value);
+            formatter();
+            printf("memory+=%d;\n", token.value);
             break;
         case RECOVER:
-            printf("memory -= %d;", token.value);
+            formatter();
+            printf("memory-=%d;\n", token.value);
             break;
         case STROKE:
-            printf("(*memory) += %d;", token.value);
+            formatter();
+            printf("*memory+=%d;\n", token.value);
+            formatter();
+            printf("sleep(%d);\n", stroke_delay);
             break;
         case BOW:
-            printf("(*memory) -= %d;", token.value);
+            formatter();
+            printf("*memory-=%d;\n", token.value);
+            formatter();
+            printf("sleep(%d);\n", stroke_delay);
             break;
         case CATCH:
-            printf("putchar(*memory);");
+            formatter();
+            printf("putchar(*memory);\n");
             break;
         case RELEASE:
-            printf("*memory = getchar();");
+            formatter();
+            printf("*memory = getchar();\n");
             break;
         case LOOP_START:
-            printf("while (*memory) {");
+            formatter();
+            printf("while (*memory) {\n");
             break;
         case LOOP_END:
-            printf("}");
+            formatter();
+            printf("}\n");
+            break;
+        case STROKE_RATE_INC:
+            stroke_delay += token.value;
+            break;
+        case STROKE_RATE_DEC:
+            stroke_delay -= token.value;
+            if (stroke_delay < 0)
+                stroke_delay = 0;
+            break;
+        case END_OF_FILE:
+            formatter();
+            printf("// End of file\n");
+            break;
+        case NEW_LINE:
             break;
         default:
             break;
     }
+}
+
+void formatter(void){
+    for (int i=0; i<= loopDepth; i++)
+        printf("\t");
 }
