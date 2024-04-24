@@ -1,0 +1,7 @@
+Overall structure of the compiler:
+- Memory tape size set to 30kbyte
+- Definition of token types
+- Struct to represent tokens (with repetitions)
+- Function to read token from input (with repetition)
+- Function to emit C code
+- Main function to compile RowLang source code
