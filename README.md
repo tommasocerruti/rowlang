@@ -37,10 +37,10 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
 
 ## Procedure to use the compiler
 
-- **Compile the RowLang Compiler:** using gcc: gcc rlc.c -o rlc
-- **Compile the RowLang source code:** using rlc: ./rlc example.rl > example.c
-- **Compile the generated C code:** using gcc: gcc example.c -o example
-- **Execute the compiled program** ./example
+- **Compile the RowLang Compiler:** using gcc: gcc -o rlc rlc.c
+- **Compile the RowLang source code:** using rlc: ./rlc rl_programs/example.rl > c_programs/example.c
+- **Compile the generated C code:** using gcc: gcc -o exec_programs/example c_programs/example.c
+- **Execute the compiled program** ./exec_programs/example
 
 ## Applications and Use Cases
 
