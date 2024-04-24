@@ -27,6 +27,21 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
 - **Optimization:** Optimization techniques to enhance the efficiency and performance of generated code: loop unrolling, constant folding, and dead code elimination.
 - **Execution:** RowLang programs are executed by interpreters or virtual machines capable of interpreting the generated code and simulating the behavior of RowLang commands and constructs. Interpreters typically iterate through the program's instructions, updating memory state and performing I/O operations as necessary.
 
+## Actual structure of the compiler
+
+- **Memory tape size and libraries:** Memory tape size set to 30kbyte and included basic C libraries.
+- **Definition of token types and token representation:** Two structs one representing the different token types and one for the token representation (the token itself plus its possible repetitions).
+- **Function to read token from input:** Function reading the character, assigning to the token its type and reading its repetitions (possibly omitted and by default set to one).
+- **Function to emit C code:** Function emitting the C code based on the type of the token.
+- **Main function to compile RowLang source code:** Main function dealing with format errors and with the reading logic to compile the code.
+
+## Procedure to use the compiler
+
+- **Compile the RowLang Compiler:** using gcc: gcc rlc.c -o rlc
+- **Compile the RowLang source code:** using rlc: ./rlc example.rl > example.c
+- **Compile the generated C code:** using gcc: gcc example.c -o example
+- **Execute the compiled program** ./example
+
 ## Applications and Use Cases
 
 - **Education and Exploration:** Educational tool for introducing programming concepts in a playful and engaging manner. Its metaphorical approach encourages learners to visualize algorithms as sequences of rowing actions, facilitating comprehension and retention.

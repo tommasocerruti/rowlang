@@ -1,5 +1,0 @@
-Using the compiler:
-1. Compile the RowLang Compiler (example using c compiler like gcc): gcc rowlang_compiler.c -o rowlang_compiler
-2. Compile the RowLang source code using rowlang_compiler: ./rowlang_compiler rowlang_programs/example.rl > c_programs/example.c
-3. Compile the generated code: ./rowlang_compiler c_programs/example.c > compiled_programs/example
-4. Execute the compiled program: compiled_programs/example
