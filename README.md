@@ -17,7 +17,6 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
   - `,`: Release - Input a character and store its ASCII value in the current memory cell.
   Commands can be followed by an integer (ranging from 2 to 9) that represents the number of repetitions of that command (if omitted it's 1).
 - **Loops:** RowLang supports loop constructs enclosed within `[...]`, facilitating repetitive execution of commands until the value of the current memory cell becomes zero.
-- **Formations:** By utilizing `{...}`, RowLang enables parallel execution of commands, simulating the synchronized movements of rowers in a regatta race.
 - **Stroke Rate Adjustment:** The `^` and `v` commands allow for dynamic adjustment of the stroke rate, regulating the speed of program execution to simulate changes in rowing intensity and pacing.
 
 ## Implementation of the compiler
@@ -47,3 +46,6 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
 - **Education and Exploration:** Educational tool for introducing programming concepts in a playful and engaging manner using a metaphorical approach to visualize algorithms as sequences of rowing actions.
 - **Artistic Expression:** As an esoteric programming language, it appeals to enthusiasts interested in creative coding and algorithmic art. 
 - **Algorithmic Challenges:** Its simplicity and metaphorical abstraction provide a platform for exploring computational concepts in unconventional ways.
+
+## Contribution
+Feel free to contribute or to add new examples to the project!

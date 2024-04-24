@@ -169,12 +169,12 @@ void emitCode(Token token) {
             printf("}\n");
             break;
         case STROKE_RATE_INC:
-            stroke_delay += token.value;
-            break;
-        case STROKE_RATE_DEC:
             stroke_delay -= token.value;
             if (stroke_delay < 0)
                 stroke_delay = 0;
+            break;
+        case STROKE_RATE_DEC:
+            stroke_delay += token.value;
             break;
         case END_OF_FILE:
             formatter();

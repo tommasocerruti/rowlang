@@ -51,6 +51,8 @@ int main() {
 	memory+=1;
 	*memory+=33;
 	sleep(0);
+	putchar(*memory);
+	memory+=1;
 
 	return 0;
 }
