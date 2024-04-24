@@ -1,4 +1,5 @@
-tommasocerruti@MBPDT rowlang % gcc -o rowlang_compiler rowlang_compiler.c
-tommasocerruti@MBPDT rowlang % ./rowlang_compiler input_files/fibonacci.rl > output_files/fibonacci.c
-tommasocerruti@MBPDT rowlang % gcc -o output_fibonacci output_files/fibonacci.c
-tommasocerruti@MBPDT rowlang % ./output_fibonacci
+Using the compiler:
+1. Compile the RowLang Compiler (example using c compiler like gcc): gcc rowlang_compiler.c -o rowlang_compiler
+2. Compile the RowLang source code using rowlang_compiler: ./rowlang_compiler rowlang_programs/example.rl > c_programs/example.c
+3. Compile the generated code: ./rowlang_compiler c_programs/example.c > compiled_programs/example
+4. Execute the compiled program: compiled_programs/example
