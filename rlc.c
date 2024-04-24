@@ -4,7 +4,7 @@
 #include <ctype.h>
 #define TAPE_SIZE 30000
 int stroke_delay = 0;
-int loopDepth = 0;
+int loop_depth = 0;
 
 typedef enum {
     PULL,
@@ -50,15 +50,15 @@ int main(int argc, char *argv[]) {
     while ((token = nextToken(source)).type != END_OF_FILE) {
         if (token.type == LOOP_START) {
             printf("\twhile (*memory) {\n");
-            loopDepth++;
+            loop_depth++;
         } else if (token.type == LOOP_END) {
             printf("\t}\n");
-            loopDepth--;
+            loop_depth--;
         } else {
             emitCode(token);
         }
     }
-    if (loopDepth != 0) {
+    if (loop_depth != 0) {
         printf("//Error: Unmatched loop brackets.\n");
         printf("\nreturn 1;\n}");
         fclose(source);
@@ -188,6 +188,6 @@ void emitCode(Token token) {
 }
 
 void formatter(void){
-    for (int i=0; i<= loopDepth; i++)
+    for (int i=0; i<= loop_depth; i++)
         printf("\t");
 }
