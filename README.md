@@ -33,7 +33,7 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
 - **Definition of token types and token representation:** Two structs one representing the different token types and one for the token representation (the token itself plus its possible repetitions).
 - **Function to read token from input:** Function reading the character, assigning to the token its type and reading its repetitions (possibly omitted and by default set to one).
 - **Function to emit C code:** Function emitting the C code based on the type of the token.
-- **Main function to compile RowLang source code:** Main function dealing with format errors and with the reading logic to compile the code.
+- **Main function to compile RowLang source code:** Main function dealing with format errors and with the reading logic to compile the RowLang source code into C code.
 
 ## Procedure to use the compiler
 
@@ -47,7 +47,3 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
 - **Education and Exploration:** Educational tool for introducing programming concepts in a playful and engaging manner using a metaphorical approach to visualize algorithms as sequences of rowing actions.
 - **Artistic Expression:** As an esoteric programming language, it appeals to enthusiasts interested in creative coding and algorithmic art. 
 - **Algorithmic Challenges:** Its simplicity and metaphorical abstraction provide a platform for exploring computational concepts in unconventional ways.
-
-## Conclusion
-
-RowLang embodies the intersection of programming and metaphorical expression, offering a unique lens through which to view computational concepts. Its minimalist syntax and rowing-inspired semantics provide a canvas for creativity, exploration, and technical experimentation. Whether used for educational purposes, artistic endeavors, or algorithmic challenges, RowLang invites programmers to navigate the waters of symbolic computation with curiosity and imagination.
