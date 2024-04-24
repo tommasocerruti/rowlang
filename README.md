@@ -33,7 +33,7 @@ RowLang programs are composed of commands, loops, formations and stroke rate adj
 - **Definition of token types and token representation:** Two structs one representing the different token types and one for the token representation (the token itself plus its possible repetitions).
 - **Function to read token from input:** Function reading the character, assigning to the token its type and reading its repetitions (possibly omitted and by default set to one).
 - **Function to emit C code:** Function emitting the C code based on the type of the token.
-- **Main function to compile RowLang source code:** Main function dealing with format errors and with the reading logic to compile the code.
+- **Main function to compile RowLang source code:** Main function dealing with format errors and with the reading logic to compile the RowLang source code into C code.
 
 ## Procedure to use the compiler
 
