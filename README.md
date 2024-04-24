@@ -32,9 +32,9 @@ RowLang programs are composed of commands, loops and stroke rate adjustments pro
 - **Definition of token types and token representation:** Two structs one representing the different token types [PULL,RECOVER, STROKE, BOW, CATCH, RELEASE, LOOP_START, LOOP_END, STROKE_RATE_INC, STROKE_RATE_DEC, END_OF_FILE, NEW_LINE, ERROR] and one for the token representation (the token itself plus its possible repetitions).
 - **Main function to compile RowLang source code:** Main function implementing the translating logic to compile the RowLang source code into C code.
 - **Additional functions:** Three functions:
-/- Function reading the character and assigning to the token its type its repetitions [Token nextToken(FILE *)].
-/- Function emitting the C code based on the type of the token [void emitCode(Token)].
-/- Formatter [void formatter(void)].
+1. Function reading the character and assigning to the token its type its repetitions [Token nextToken(FILE *)].
+2. Function emitting the C code based on the type of the token [void emitCode(Token)].
+3. Formatter [void formatter(void)].
 
 ## Procedure to use the compiler
 
