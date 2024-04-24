@@ -104,7 +104,6 @@ Token nextToken(FILE *source) {
     return token;
 }
 
-
 void emitCode(Token token) {
     switch (token.type) {
         case PULL:
