@@ -27,7 +27,7 @@ RowLang programs are composed of commands, loops and stroke rate adjustments pro
 - **Optimization:** Optimization techniques to enhance the efficiency and performance of generated code: loop unrolling, constant folding, and dead code elimination.
 - **Execution:** After the RowLang program is translated into executable C code, you can use a compiler (like gcc) to consecutively execute it.
 
-## Actual structure of the compiler
+## Structure of the compiler
 
 - **Items and libraries:** Including basic C libraries and defining three fundamental items: a constant TAPE_SIZE (representing the maximum memory read, currently set to 30kbyte) and two variables (stroke_delay - representing the stroke rate, i.e. the speed of execution of the program - and loop_depth - representing the depth of loops, helping with formatting and error checking).
 - **Definition of token types and token representation:** Two structs one representing the different token types [PULL,RECOVER, STROKE, BOW, CATCH, RELEASE, LOOP_START, LOOP_END, STROKE_RATE_INC, STROKE_RATE_DEC, END_OF_FILE, NEW_LINE, ERROR] and one for the token representation (the token itself plus its possible repetitions).
@@ -38,10 +38,10 @@ RowLang programs are composed of commands, loops and stroke rate adjustments pro
 3. Formatter [void formatter(void)].
 
 ## Procedure to use the compiler
-
-- **Compile the RowLang Compiler:** using gcc: gcc -o rlc rlc.c
-- **Compile the RowLang source code:** using rlc: ./rlc row/example.row > c/example.c
-- **Compile the generated C code:** using gcc: gcc -o exec/example c/example.c
+You can use any c compiler, using gcc:
+- **Compile the RowLang Compiler:** gcc -o rlc rlc.c
+- **Compile the RowLang source code:** ./rlc row/example.row > c/example.c
+- **Compile the generated C code:** gcc -o exec/example c/example.c
 - **Execute the compiled program** ./exec/example
 
 ## Applications and Use Cases
