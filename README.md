@@ -38,7 +38,7 @@ RowLang programs are composed of commands, loops and stroke rate adjustments pro
 3. Formatter [void formatter(void)].
 
 ## Procedure to use the compiler
-You can use any c compiler, using gcc:
+You can use any C compiler, using gcc:
 - **Compile the RowLang Compiler:** gcc -o rlc rlc.c
 - **Compile the RowLang source code:** ./rlc row/example.row > c/example.c
 - **Compile the generated C code:** gcc -o exec/example c/example.c
