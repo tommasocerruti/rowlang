@@ -18,6 +18,7 @@ RowLang programs are composed of commands, loops and stroke rate adjustments pro
   Commands can be followed by an integer that represents the number of repetitions of that command (if omitted it's 1).
 - **Loops:** RowLang supports loop constructs enclosed within `[...]`, facilitating repetitive execution of commands until the value of the current memory cell becomes zero.
 - **Stroke Rate Adjustment:** The `^` and `v` commands allow for dynamic adjustment of the stroke rate, regulating the speed of program execution to simulate changes in rowing intensity and pacing.
+- **Coaching:** Any text excluded from the commands, loops and stroke rate adjustments will be interpreted as comments. Therefore avoid the use of punctuation (in particular dots and commas), square brackets as well as the set of characters P, R, S, B and v, which can be used using their opposite lower/upper case form.
 
 ## Implementation of the compiler
 
