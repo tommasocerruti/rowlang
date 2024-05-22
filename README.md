@@ -1,9 +1,9 @@
-# RowLang
+p# RowLang
 
 ## Technical Description of RowLang
 
 RowLang is an esoteric programming language designed for symbolic computation, inspired by the dynamics of rowing.  
-It offers a minimalistic yet expressive syntax, combining memory manipulation with the metaphorical representation of rowing actions.  
+It offers a minimalistic syntax, combining memory manipulation with the metaphorical representation of rowing actions.  
 RowLang programs are composed of commands, loops and stroke rate adjustments providing a unique perspective on algorithmic expression.  
 
 ## Syntax and Semantics
@@ -17,7 +17,7 @@ RowLang programs are composed of commands, loops and stroke rate adjustments pro
   - `,`: Release - Input a character and store its ASCII value in the current memory cell.
   Commands can be followed by an integer that represents the number of repetitions of that command (if omitted it's 1).
 - **Loops:** RowLang supports loop constructs enclosed within `[...]`, facilitating repetitive execution of commands until the value of the current memory cell becomes zero.
-- **Stroke Rate Adjustment:** The `^` and `v` commands allow for dynamic adjustment of the stroke rate, regulating the speed of program execution to simulate changes in rowing intensity and pacing.
+- **Stroke Rate Adjustment:** The `^` and `v` commands allow for dynamic adjustment of the stroke rate, regulating the speed of program execution to simulate changes in rowing pacing.
 - **Coaching:** Any text excluded from the commands, loops and stroke rate adjustments will be interpreted as comments. Therefore avoid the use of punctuation (in particular dots and commas), square brackets as well as the set of characters P, R, S, B and v, which can be used using their opposite lower/upper case form.
 
 ## Implementation of the compiler
