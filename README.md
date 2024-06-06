@@ -1,6 +1,6 @@
 ## Technical Description of RowLang
 
-RowLang is an esoteric programming language designed for symbolic computation, inspired by the dynamics of rowing.  
+RowLang is an esoteric minimalistic programming language designed for symbolic computation, inspired by the dynamics of rowing.  
 It offers a minimalistic syntax, combining memory manipulation with the metaphorical representation of rowing actions.  
 RowLang programs are composed of commands, loops and stroke rate adjustments providing a unique perspective on algorithmic expression.  
 
