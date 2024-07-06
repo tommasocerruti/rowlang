@@ -1,7 +1,7 @@
 ## Technical Description of RowLang
 
 <div style="display: flex; align-items: flex-start;">
-    <img src="logo.jpeg" alt="Project Logo" width="200" style="margin-right: 20px;"/>
+    <img src="logo.jpeg" alt="Project Logo" width="200" style="margin-right: 20px;" align="left"/>
     <div>
         RowLang is an esoteric programming language designed for symbolic computation, inspired by the dynamics of rowing.  
         It offers a minimalistic syntax, combining memory manipulation with the metaphorical representation of rowing actions.  
