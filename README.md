@@ -16,8 +16,6 @@
         Its compiler is incredibly compact, just 4kB, and it is entirely written in C.<br>
     </div>
 </div>
-<br>
-<br>
 
 ## Syntax and Semantics
 
