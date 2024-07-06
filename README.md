@@ -13,7 +13,7 @@
         RowLang is an esoteric programming language designed for symbolic computation, inspired by the dynamics of rowing.<br>  
         It offers a minimalistic syntax, combining memory manipulation with the metaphorical representation of rowing actions.<br>  
         RowLang programs are composed of commands, loops and stroke rate adjustments providing a unique programming experience.<br>
-        Its compiler is incredibly compact, just 4kB, and it is entirely written in C.<br>
+        Its compiler is incredibly compact, just 4kB, and it is entirely written in C.<br><br>
     </div>
 </div>
 
