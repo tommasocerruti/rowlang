@@ -7,6 +7,8 @@ RowLang programs are composed of commands, loops and stroke rate adjustments pro
 Its compiler is incredibly compact, just 4kB, and it is entirely written in C.
 
 
+
+
 ## Syntax and Semantics
 
 - **Commands:** RowLang commands correspond to rowing maneuvers and memory operations:
