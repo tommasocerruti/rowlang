@@ -1,6 +1,6 @@
 [![Language](https://img.shields.io/badge/language-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![Size](https://img.shields.io/github/languages/code-size/yourusername/rowlang)](https://github.com/yourusername/rowlang)
+[![Size](https://img.shields.io/github/languages/code-size/tommasocerruti/rowlang)](https://github.com/yourusername/rowlang)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 ## Technical Description of RowLang
